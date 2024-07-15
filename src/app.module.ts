@@ -3,9 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersController } from './users/users.controller';
 import { UsersService } from './users/users.service';
+import TypeOrmModule from 'db/typeorm';
 
 @Module({
-  imports: [],
+  imports: [TypeOrmModule],
   controllers: [AppController, UsersController],
   providers: [AppService, UsersService],
 })
