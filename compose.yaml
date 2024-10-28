@@ -1,10 +1,14 @@
+# To store DB credentials securely, use a .env file to define POSTGRES_USER and POSTGRES_PASSWORD
+# and make sure to add the .env file to your .gitignore to prevent it from being committed to version control.
 version: '3.8'
 
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: node:16
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    command: npm run start:dev
     ports:
       - "3000:3000"
     environment:
@@ -26,6 +30,3 @@ services:
 
 volumes:
   db_data:
-
-# To store DB credentials securely, use a .env file to define POSTGRES_USER and POSTGRES_PASSWORD
-# and make sure to add the .env file to your .gitignore to prevent it from being committed to version control.
