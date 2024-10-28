@@ -12,4 +12,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start:${NODE_ENV}"]
+CMD ["npm", "run", "start:dev"]
