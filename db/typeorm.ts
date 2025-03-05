@@ -1,4 +1,5 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from 'src/users/entities/user.entity';
 
 export default TypeOrmModule.forRoot({
   type: 'postgres',
@@ -7,6 +8,6 @@ export default TypeOrmModule.forRoot({
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: 'mydatabase',
-  entities: [],
+  entities: [User],
   synchronize: true,
 });
