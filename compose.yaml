@@ -1,10 +1,9 @@
 # To store DB credentials securely, use a .env file to define POSTGRES_USER and POSTGRES_PASSWORD
 # and make sure to add the .env file to your .gitignore to prevent it from being committed to version control.
-version: '3.8'
 
 services:
   app:
-    image: node:16
+    image: node:20
     working_dir: /usr/src/app
     volumes:
       - .:/usr/src/app
